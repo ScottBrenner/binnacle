@@ -6,7 +6,7 @@ installed_list = json.loads(subprocess.run(['helm', 'list', '--output', 'json'],
 
 installed_dict = {}
 
-# subprocess.run(['helm', 'repo', 'update'])
+subprocess.run(['helm', 'repo', 'update'])
 
 for chart in installed_list['Releases']:
     installed_dict[chart['Chart'].rsplit('-',1)[0]] = chart['Chart'].rsplit('-',1)[1]
